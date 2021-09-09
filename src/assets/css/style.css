@@ -1,0 +1,58 @@
+
+* { 
+	margin: 0; 
+	padding: 0; 
+	
+}
+
+#canvas { 
+	width: 700px; 
+	height: 640px;	
+	background: black;
+	flex-direction: row;
+	display: flex;
+	margin: 0 auto;
+}
+
+.box {
+	display: inline-block;
+	
+}
+		
+#menuInicio {
+	width: 697px; 
+	height: 640px;	
+	background-image: url("../img/404Bg.png");
+	display: flex;
+	
+	align-items: center;
+	margin-left: 610px; 
+	position: absolute;
+	flex-wrap: wrap;
+	
+}
+
+
+#newGame{
+	
+	width: 5em;
+	margin-top: 350px;
+	margin-left: 90px;
+}
+
+#home{
+	
+	width: 5em;
+	margin-top: 350px;
+	margin-left: 250px;
+        
+		
+}
+#img2{
+	width: 200px;
+}
+#img{
+	width: 200px;
+}
+
+
