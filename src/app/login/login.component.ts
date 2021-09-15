@@ -20,16 +20,16 @@ export class LoginComponent implements OnInit {
   });
   authentication: Authentication;
 
-  constructor(private router: Router, public usuariosService: UsuariosService, private elemento: ElementRef ) { }
+  constructor(private router: Router, public usuariosService: UsuariosService) {} //, private elemento: ElementRef ) { }
   
   ngOnInit(): void {
     console.log("deusmeajuda");
   }
 
    
-  ngAfterViewInit(): void {
-      this.elemento.nativeElement.ownerDocument.body.style.backgroundColor = "";
-  }
+  // ngAfterViewInit(): void {
+  //     this.elemento.nativeElement.ownerDocument.body.style.backgroundColor = "";
+  // }
 
   login(){
     if (this.loginForm.valid) {
@@ -37,8 +37,9 @@ export class LoginComponent implements OnInit {
       this.usuariosService.authentication(this.authentication).subscribe(
       data => {
       console.log(data);
-        localStorage.setItem('token', String(data));
-        localStorage.setItem('admin', 'true');
+        localStorage.setItem('admin', data.admin);
+        localStorage.setItem('token', data.token);
+        
         localStorage.setItem('username', this.authentication.username);
         localStorage.setItem('password', this.authentication.password);
         let userAutenticado = true;

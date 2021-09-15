@@ -19,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoadScriptsService} from './load-scripts.service';
 
 //imports do material design
-
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -35,10 +34,8 @@ import { NavbarComponent } from './sharedComponents/navbar/navbar.component';
     FormContatosComponent,
     NotFoundComponent,
     NavbarComponent,
-    
-    
-    
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -49,9 +46,7 @@ import { NavbarComponent } from './sharedComponents/navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    //RouterModule
     HttpClientModule
-    
   ],
   providers: [LoadScriptsService, AuthGuard],
   

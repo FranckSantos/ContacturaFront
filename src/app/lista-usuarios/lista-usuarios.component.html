@@ -31,10 +31,10 @@
             <!--tbody-->
             <tbody>
                 <tr *ngFor="let user of usersList">
-                    <td data-label="Email">{{user.email}}</td>
+                    <td data-label="Email">{{user.username}}</td>
                     <td data-label="Nome">{{user.name}}</td>
                     <td data-label="Admin">{{user.admin}}</td>
-                    <!-- <td data-label="Senha">{{user.senha}}</td> -->
+                    <!-- <td data-label="Senha">{{user.password}}</td>  -->
                     <td>
                         <div class="container-buttons-tablle">
                             <mat-icon (click)="deleteUsuarios(user)">delete</mat-icon>
