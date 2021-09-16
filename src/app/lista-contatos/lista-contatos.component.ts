@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Contacts } from '../models/contacts';
 import { ContatosService } from '../service/contatos/contatos.service';
+import { UsuariosService } from '../service/usuarios/usuarios.service';
 
 @Component({
   selector: 'app-lista-contatos',
@@ -12,10 +13,23 @@ import { ContatosService } from '../service/contatos/contatos.service';
 export class ListaContatosComponent implements OnInit {
 
   contactsList: Contacts[];
+
+  search: string;
   // collection = {count: 10, data: []};
   constructor(public contatosService: ContatosService, private router: Router) { }
 
   ngOnInit(): void {
+    this.contatosService.getContacts().subscribe(
+      data => {
+        this.contactsList = data;
+        console.log(data);
+      },
+      error => {
+        this.contactsList = [];
+        console.log(error);
+      }
+    );
+  
     // this.populateContacts();
     this.getContacts();
   }
@@ -76,5 +90,9 @@ export class ListaContatosComponent implements OnInit {
       }
     });
   }
+  
+      
 
+     
+  
 }

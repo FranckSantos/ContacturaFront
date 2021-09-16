@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -12,14 +13,29 @@ import { UsuariosService } from '../service/usuarios/usuarios.service';
 export class ListaUsuariosComponent implements OnInit {
 
   usersList: Users[];
+
+  search: string;
   //collection = {count: 10, data: []};
 
-  constructor(public usuariosService: UsuariosService, private router:Router) { }
+  constructor(public usuariosService: UsuariosService, private router:Router, private httpClient: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.usuariosService.getUsers().subscribe(
+      data => {
+        this.usersList = data;
+        console.log(data);
+      },
+      error => {
+        this.usersList = [];
+        console.log(error);
+      }
+    );
+  
     //this.populateUsers();
    this.getUsers();
-  }
+  } 
+
+
 
   getUsers(){
     this.usuariosService.getUsers().subscribe(

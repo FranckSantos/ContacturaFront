@@ -16,7 +16,7 @@ export class FormUsuariosComponent implements OnInit {
     formUsuarios = new FormGroup({
       id: new FormControl(''),
       email: new FormControl('',[Validators.required, Validators.email]),
-      senha: new FormControl('',[Validators.required]),
+      senha: new FormControl('', [Validators.required]),
       name: new FormControl('',[Validators.required]),
       check: new FormControl('')
     });

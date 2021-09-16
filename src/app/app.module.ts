@@ -23,6 +23,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './sharedComponents/navbar/navbar.component';
+import { SearchfilterPipe } from './searchfilter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { NavbarComponent } from './sharedComponents/navbar/navbar.component';
     FormContatosComponent,
     NotFoundComponent,
     NavbarComponent,
+    SearchfilterPipe,
   ],
   
   imports: [
