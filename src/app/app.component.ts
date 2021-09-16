@@ -9,7 +9,7 @@ import { AuthGuard } from './service/auth.guard';
 })
 export class AppComponent {
   title = 'contactura';
-  
+  search;
   mostrarMenu: boolean = false;
 
   constructor(private authGuard: AuthGuard){}
