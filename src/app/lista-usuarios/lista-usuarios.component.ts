@@ -14,23 +14,12 @@ export class ListaUsuariosComponent implements OnInit {
 
   usersList: Users[];
 
-  search: string;
+  search;
   //collection = {count: 10, data: []};
 
   constructor(public usuariosService: UsuariosService, private router:Router, private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.usuariosService.getUsers().subscribe(
-      data => {
-        this.usersList = data;
-        console.log(data);
-      },
-      error => {
-        this.usersList = [];
-        console.log(error);
-      }
-    );
-  
     //this.populateUsers();
    this.getUsers();
   } 
