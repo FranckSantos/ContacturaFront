@@ -13,6 +13,7 @@ import { NotFoundComponent } from './sharedComponents/not-found/not-found.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 //begin  Services
@@ -49,7 +50,8 @@ import { SearchfilterPipe } from './searchfilter.pipe';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [LoadScriptsService, AuthGuard],
   
