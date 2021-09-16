@@ -14,23 +14,12 @@ export class ListaContatosComponent implements OnInit {
 
   contactsList: Contacts[];
 
-  search: string;
+  search;
   // collection = {count: 10, data: []};
   constructor(public contatosService: ContatosService, private router: Router) { }
 
   ngOnInit(): void {
-    this.contatosService.getContacts().subscribe(
-      data => {
-        this.contactsList = data;
-        console.log(data);
-      },
-      error => {
-        this.contactsList = [];
-        console.log(error);
-      }
-    );
-  
-    // this.populateContacts();
+   // this.populateContacts();
     this.getContacts();
   }
 
